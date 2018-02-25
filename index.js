@@ -47,7 +47,7 @@ ffmpegUfvPlatform.prototype.didFinishLaunching = function() {
     var configuredAccessories = [];
 
     var nvrs = self.config.nvrs;
-    var ffmpegOptions = self.config.ffmpeg || {};
+    var videoConfigOptions = self.config.videoConfig || {};
 
     nvrs.forEach(function(nvrConfig) {
 
@@ -157,7 +157,7 @@ ffmpegUfvPlatform.prototype.didFinishLaunching = function() {
                         "maxFPS": discoveredChannel.fps
                       };
 
-                      videoConfig = Object.assign({}, ffmpegOptions, videoConfig);
+                      videoConfig = Object.assign({}, videoConfigOptions, videoConfig);
 
                       debug('Config: ' + JSON.stringify(videoConfig));
 
